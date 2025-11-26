@@ -1,4 +1,4 @@
-*box-sizing{
+*{
     box-sizing: border-box;
 }
 body {
@@ -8,6 +8,8 @@ body {
     background-image:linear-gradient(135deg, #1f232a #1a202c);
     background-attachment: fixed;
     background-color: #1f232a;
+    display: flex;
+    flex-direction: column;
 }
 header{
     background-color: rgba(15,20,25,0.8);
@@ -34,27 +36,60 @@ h1, h2, a {
 }
 nav{
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
 }
 nav a{
-    margin: 0;
-    font-size: 1.5rem;
-    color: #f0f0f0;
-    text-decoration: none;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
+   text-decoration: none;
+   margin: 0%; 
+   color: #ffc107;
+}
+main{
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.catalog{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+.catalog div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(15,20,25,0.8);
+    border-radius: 20px;
+    border: 5px solid #ffc107;
+}
+.catalog img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+.catalog div:hover{
+    box-shadow: 10px 10px 20px #ffc107;
 }
 footer{
-    background-color: yellow;
+    background-color: #ffc107;
     height: 30px;
-    width: 600px;
+    width: 100%;
     text-align: center;
     padding: 30px;
-    margin-top: 40px;
-    color: black;
+    color: white;
+    font-weight: bold;
     font-size: 1.2rem;
     letter-spacing: 1px;
 }
 footer p{
     text-align: center;
+    margin: 0;
 }
